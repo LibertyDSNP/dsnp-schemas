@@ -50,5 +50,3 @@ const publicKeyMulticodec = Buffer.from([0xec, 0x01, 0x00, ...]);
 const avroBuffer = publicKeyAvroSchema.toBuffer({ publicKey: publicKeyMulticodec });
 ```
 
-0xec
-1110 1100 ==> 1110 1100 + 1
