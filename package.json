@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/LibertyDSNP/dsnp-schemas#readme",
   "dependencies": {
+    "avsc": "^5.7.7",
     "json-stringify-pretty-compact": "^4.0.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.3.3"
@@ -37,7 +38,6 @@
     "@types/jest": "^29.5.11",
     "@typescript-eslint/eslint-plugin": "^6.17.0",
     "@typescript-eslint/parser": "^6.17.0",
-    "avro-js": "^1.11.3",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",

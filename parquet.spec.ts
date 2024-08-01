@@ -1,13 +1,13 @@
 import fs from "fs";
 import { ParquetWriter, ParquetReader } from "@dsnp/parquetjs";
 import { fromDSNPSchema } from "./parquet.js";
-import { broadcast } from "./dsnp/index.js";
+import { Announcement } from "./index.js";
 
 describe("DSNP Schema Conversion Test File", () => {
-  const [parquetSchema, writerOptions] = fromDSNPSchema(broadcast);
+  const [parquetSchema, writerOptions] = fromDSNPSchema(Announcement.broadcast.parquetSchema);
 
   const row1 = {
-    announcementType: 2,
+    announcementType: Announcement.broadcast.announcementType,
     contentHash: "0x12345678",
     fromId: 12n,
     url: "https://github.com/LibertyDSNP/parquetjs/",

@@ -13,19 +13,22 @@ npm install @dsnp/schemas
 
 ```typescript
 import { dsnp } from "@dsnp/schemas";
+
+console.log(dsnp.broadcast);
 ```
 
-### With Parquet Writer
+### Write Parquet files
 
 ```sh
 npm install @dsnp/parquetjs
 ```
 
 ```typescript
+import { Announcement } from "@dsnp/schemas"; 
 import { parquet } from "@dsnp/schemas";
 import { ParquetWriter } from "@dsnp/parquetjs";
 
-const [parquetSchema, writerOptions] = parquet.fromDSNPSchema(dsnp.broadcast);
+const [parquetSchema, writerOptions] = parquet.fromDSNPSchema(Announcement["broadcast"].parquetSchema);
 const writer = await ParquetWriter.openFile(parquetSchema, "./file.parquet", writerOptions);
 writer.appendRow({
   announcementType: 2,
@@ -35,3 +38,17 @@ writer.appendRow({
 });
 await writer.close();
 ```
+
+### Write Avro objects
+
+```typescript
+import { UserData } from "@dsnp/schemas";
+import avro from "avsc";
+
+const publicKeyAvroSchema = avro.Type.forSchema(UserData["keyAgreementPublicKeys"].avroSchema);
+const publicKeyMulticodec = Buffer.from([0xec, 0x01, 0x00, ...]);
+const avroBuffer = publicKeyAvroSchema.toBuffer({ publicKey: publicKeyMulticodec });
+```
+
+0xec
+1110 1100 ==> 1110 1100 + 1

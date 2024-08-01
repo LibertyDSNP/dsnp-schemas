@@ -1,4 +1,6 @@
-export default {
+import { Schema } from "avsc";
+
+const PublicKey: Schema = {
   type: "record",
   name: "PublicKey",
   namespace: "org.dsnp",
@@ -17,3 +19,5 @@ export default {
     },
   ],
 };
+
+export default PublicKey;
