@@ -1,11 +1,12 @@
 import { testCompression, testParquetSchema } from "../test/parquet.js";
 import * as generators from "@dsnp/test-generators";
-import updateSchema from "./update.js";
+import updateSchema from "./update.json";
+import { DSNPParquetSchema } from "../types/dsnp-parquet.js";
 
 describe("Update Spec", () => {
-  testParquetSchema(updateSchema);
+  testParquetSchema(updateSchema as DSNPParquetSchema);
 
-  testCompression("update", updateSchema, () => ({
+  testCompression("update", updateSchema as DSNPParquetSchema, () => ({
     announcementType: 6,
     contentHash: generators.generateHash(),
     fromId: generators.randInt(10000000),

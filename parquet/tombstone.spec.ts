@@ -1,11 +1,12 @@
 import { testCompression, testParquetSchema } from "../test/parquet.js";
 import * as generators from "@dsnp/test-generators";
-import tombstoneSchema from "./tombstone.js";
+import tombstoneSchema from "./tombstone.json";
+import { DSNPParquetSchema } from "../types/dsnp-parquet.js";
 
 describe("Tombstone Spec", () => {
-  testParquetSchema(tombstoneSchema);
+  testParquetSchema(tombstoneSchema as DSNPParquetSchema);
 
-  testCompression("tombstone", tombstoneSchema, () => ({
+  testCompression("tombstone", tombstoneSchema as DSNPParquetSchema, () => ({
     announcementType: 0,
     fromId: generators.randInt(10000000),
     targetAnnouncementType: 2,
