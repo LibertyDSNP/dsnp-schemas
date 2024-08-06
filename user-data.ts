@@ -1,7 +1,7 @@
-import GraphEdge from "./avro/GraphEdge.json";
-import PRId from "./avro/PRId.json";
-import PublicKey from "./avro/PublicKey.json";
-import ProfileResource from "./avro/ProfileResource.json";
+import GraphEdge from "./avro/GraphEdge.js";
+import PRId from "./avro/PRId.js";
+import PublicKey from "./avro/PublicKey.js";
+import ProfileResource from "./avro/ProfileResource.js";
 
 import { Schema } from "avsc";
 
@@ -37,49 +37,49 @@ export function descriptorForUserDataType(userDataType: UserDataType): UserDataD
         systemName: UserDataType.PublicFollows,
         encryptionAlgorithm: null,
         compressionCodec: UserDataCompressionCodecType.DEFLATE,
-        avroSchema: GraphEdge as Schema,
+        avroSchema: GraphEdge,
       };
     case UserDataType.PrivateFollows:
       return {
         systemName: UserDataType.PrivateFollows,
         encryptionAlgorithm: UserDataEncryptionAlgorithmType.Curve25519XSalsa20Poly1305,
         compressionCodec: UserDataCompressionCodecType.DEFLATE,
-        avroSchema: GraphEdge as Schema,
+        avroSchema: GraphEdge,
       };
     case UserDataType.PrivateConnections:
       return {
         systemName: UserDataType.PrivateConnections,
         encryptionAlgorithm: UserDataEncryptionAlgorithmType.Curve25519XSalsa20Poly1305,
         compressionCodec: UserDataCompressionCodecType.DEFLATE,
-        avroSchema: GraphEdge as Schema,
+        avroSchema: GraphEdge,
       };
     case UserDataType.PrivateConnectionPRIds:
       return {
         systemName: UserDataType.PrivateConnectionPRIds,
         encryptionAlgorithm: null,
         compressionCodec: UserDataCompressionCodecType.DEFLATE,
-        avroSchema: PRId as Schema,
+        avroSchema: PRId,
       };
     case UserDataType.KeyAgreementPublicKeys:
       return {
         systemName: UserDataType.KeyAgreementPublicKeys,
         encryptionAlgorithm: null,
         compressionCodec: null,
-        avroSchema: PublicKey as Schema,
+        avroSchema: PublicKey,
       };
     case UserDataType.AssertionMethodPublicKeys:
       return {
         systemName: UserDataType.AssertionMethodPublicKeys,
         encryptionAlgorithm: null,
         compressionCodec: null,
-        avroSchema: PublicKey as Schema,
+        avroSchema: PublicKey,
       };
     case UserDataType.ProfileResources:
       return {
         systemName: UserDataType.ProfileResources,
         encryptionAlgorithm: null,
         compressionCodec: null,
-        avroSchema: ProfileResource as Schema,
+        avroSchema: ProfileResource,
       };
   }
   throw new Error("Invalid enum value");

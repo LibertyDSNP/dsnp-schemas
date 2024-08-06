@@ -1,12 +1,11 @@
 import { testCompression, testParquetSchema } from "../test/parquet.js";
 import * as generators from "@dsnp/test-generators";
-import reactionSchema from "./reaction.json";
-import { DSNPParquetSchema } from "../types/dsnp-parquet.js";
+import reactionSchema from "./reaction.js";
 
 describe("Reaction Spec", () => {
-  testParquetSchema(reactionSchema as DSNPParquetSchema);
+  testParquetSchema(reactionSchema);
 
-  testCompression("reaction", reactionSchema as DSNPParquetSchema, () => ({
+  testCompression("reaction", reactionSchema, () => ({
     announcementType: 4,
     emoji: generators.sample(["😀", "🤌🏼", "👩🏻‍🎤", "🧑🏿‍🏫", "🏳️‍🌈", "🏳️‍⚧️", "⚛︎", "🃑", "♻︎"]),
     apply: generators.randInt(255),

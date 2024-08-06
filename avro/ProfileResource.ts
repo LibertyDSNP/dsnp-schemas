@@ -1,4 +1,6 @@
-{
+import { Schema } from "avsc";
+
+const ProfileResource: Schema = {
   "namespace": "org.dsnp",
   "name": "ProfileResource",
   "type": "record",
@@ -15,4 +17,7 @@
       "doc": "Content address for the resource"
     }
   ]
-}
+};
+
+export default ProfileResource;
+

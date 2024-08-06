@@ -1,8 +1,8 @@
-import broadcast from "./parquet/broadcast.json";
-import reaction from "./parquet/reaction.json";
-import reply from "./parquet/reply.json";
-import tombstone from "./parquet/tombstone.json";
-import update from "./parquet/update.json";
+import broadcast from "./parquet/broadcast.js";
+import reaction from "./parquet/reaction.js";
+import reply from "./parquet/reply.js";
+import tombstone from "./parquet/tombstone.js";
+import update from "./parquet/update.js";
 
 import { DSNPParquetSchema } from "./types/dsnp-parquet.js";
 
@@ -25,31 +25,31 @@ export function descriptorForAnnouncementType(announcementType: AnnouncementType
     case AnnouncementType.Tombstone:
       return {
         announcementType: AnnouncementType.Tombstone,
-        parquetSchema: tombstone as DSNPParquetSchema,
+        parquetSchema: tombstone,
         tombstoneAllowed: false,
       };
     case AnnouncementType.Broadcast:
       return {
         announcementType: AnnouncementType.Broadcast,
-        parquetSchema: broadcast as DSNPParquetSchema,
+        parquetSchema: broadcast,
         tombstoneAllowed: true,
       };
     case AnnouncementType.Reply:
       return {
         announcementType: AnnouncementType.Reply,
-        parquetSchema: reply as DSNPParquetSchema,
+        parquetSchema: reply,
         tombstoneAllowed: true,
       };
     case AnnouncementType.Reaction:
       return {
         announcementType: AnnouncementType.Reaction,
-        parquetSchema: reaction as DSNPParquetSchema,
+        parquetSchema: reaction,
         tombstoneAllowed: false,
       };
     case AnnouncementType.Update:
       return {
         announcementType: AnnouncementType.Update,
-        parquetSchema: update as DSNPParquetSchema,
+        parquetSchema: update,
         tombstoneAllowed: false,
       };
   }
