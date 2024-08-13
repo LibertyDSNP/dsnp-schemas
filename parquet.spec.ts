@@ -35,7 +35,7 @@ describe("DSNP Schema Conversion Test File", () => {
   it("schema is generated correctly", () => {
     expect(parquetSchema).toMatchSnapshot();
   });
-  
+
   it("schema is encoded correctly", () => {
     expect(reader.metadata?.schema).toMatchSnapshot();
   });
