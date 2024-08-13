@@ -1,6 +1,6 @@
 # Official DSNP Schemas
 
-**Matching DSNP Version: pre-v1.3.0**
+**Matching DSNP Version: v1.3.0**
 
 ## Use Schemas as Library
 
@@ -58,7 +58,7 @@ const [parquetSchema, writerOptions] = parquet.fromDSNPSchema(descriptorForAnnou
 const writer = await ParquetWriter.openFile(parquetSchema, "./file.parquet", writerOptions);
 writer.appendRow({
   announcementType: AnnouncementType.Broadcast,
-  contentHash: "0x1234567890abcdef0123456789abcdef0123456789abcdef0123456789abcdef",
+  contentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
   fromId: 78187493520,
   url: "https://spec.dsnp.org/DSNP/Types/Broadcast.html",
 });
