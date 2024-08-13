@@ -14,7 +14,7 @@ const broadcast: DSNPParquetSchema = [
   },
   {
     name: "contentHash",
-    column_type: "BYTE_ARRAY",
+    column_type: "STRING",
     compression: "GZIP",
     bloom_filter: true,
   },

@@ -9,6 +9,6 @@ describe("Tombstone Spec", () => {
     announcementType: 0,
     fromId: generators.randInt(10000000),
     targetAnnouncementType: 2,
-    targetContentHash: generators.generateHash(),
+    targetContentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
   }));
 });

@@ -7,10 +7,10 @@ describe("Update Spec", () => {
 
   testCompression("update", updateSchema, () => ({
     announcementType: 6,
-    contentHash: generators.generateHash(),
+    contentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
     fromId: generators.randInt(10000000),
     targetAnnouncementType: 2,
-    targetContentHash: generators.generateHash(),
+    targetContentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
     url: `https://www.imadapp.com/data/posts/${generators.generateHash()}`,
   }));
 });

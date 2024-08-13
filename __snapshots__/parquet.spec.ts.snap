@@ -27,7 +27,7 @@ exports[`DSNP Schema Conversion Test File schema is encoded correctly 1`] = `
     "type_length": null,
   },
   {
-    "converted_type": null,
+    "converted_type": 0,
     "field_id": null,
     "logicalType": null,
     "name": "contentHash",
@@ -90,7 +90,7 @@ ParquetSchema {
       "dLevelMax": 0,
       "encoding": "PLAIN",
       "name": "contentHash",
-      "originalType": undefined,
+      "originalType": "UTF8",
       "path": [
         "contentHash",
       ],
@@ -160,7 +160,7 @@ ParquetSchema {
       "dLevelMax": 0,
       "encoding": "PLAIN",
       "name": "contentHash",
-      "originalType": undefined,
+      "originalType": "UTF8",
       "path": [
         "contentHash",
       ],
@@ -218,7 +218,7 @@ ParquetSchema {
       "compression": "GZIP",
       "encoding": "PLAIN",
       "statistics": false,
-      "type": "BYTE_ARRAY",
+      "type": "UTF8",
     },
     "fromId": {
       "compression": "GZIP",

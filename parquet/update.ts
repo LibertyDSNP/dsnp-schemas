@@ -14,7 +14,7 @@ const update: DSNPParquetSchema = [
   },
   {
     name: "contentHash",
-    column_type: "BYTE_ARRAY",
+    column_type: "STRING",
     compression: "GZIP",
     bloom_filter: true,
   },
@@ -48,7 +48,7 @@ const update: DSNPParquetSchema = [
   },
   {
     name: "targetContentHash",
-    column_type: "BYTE_ARRAY",
+    column_type: "STRING",
     compression: "GZIP",
     bloom_filter: true,
   },

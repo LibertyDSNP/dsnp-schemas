@@ -7,7 +7,7 @@ describe("Reply Spec", () => {
 
   testCompression("reply", replySchema, () => ({
     announcementType: 3,
-    contentHash: generators.generateHash(),
+    contentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
     fromId: generators.randInt(10000000),
     inReplyTo: `dsnp://${generators.randInt(10000000)}/${generators.generateHash()}`,
     url: `https://www.imadapp.com/data/posts/${generators.generateHash()}`,

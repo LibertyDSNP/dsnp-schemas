@@ -36,7 +36,7 @@ const tombstone: DSNPParquetSchema = [
   },
   {
     name: "targetContentHash",
-    column_type: "BYTE_ARRAY",
+    column_type: "STRING",
     compression: "GZIP",
     bloom_filter: true,
   },

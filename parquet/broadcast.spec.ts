@@ -7,7 +7,7 @@ describe("Broadcast Spec", () => {
 
   testCompression("broadcast", broadcastSchema, () => ({
     announcementType: 2,
-    contentHash: generators.generateHash(),
+    contentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
     fromId: generators.randInt(10000000),
     url: `https://www.imadapp.com/data/posts/${generators.generateHash()}`,
   }));

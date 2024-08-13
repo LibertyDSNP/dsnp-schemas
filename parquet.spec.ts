@@ -10,7 +10,7 @@ describe("DSNP Schema Conversion Test File", () => {
 
   const row1 = {
     announcementType: AnnouncementType.Broadcast,
-    contentHash: "0x12345678",
+    contentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
     fromId: 12n,
     url: "https://github.com/LibertyDSNP/parquetjs/",
   };
@@ -35,7 +35,7 @@ describe("DSNP Schema Conversion Test File", () => {
   it("schema is generated correctly", () => {
     expect(parquetSchema).toMatchSnapshot();
   });
-
+  
   it("schema is encoded correctly", () => {
     expect(reader.metadata?.schema).toMatchSnapshot();
   });
@@ -43,10 +43,6 @@ describe("DSNP Schema Conversion Test File", () => {
   it("output matches input", async () => {
     const cursor = reader.getCursor();
     const row = await cursor.next();
-    const rowData = {
-      ...row1,
-      contentHash: Buffer.from([48, 120, 49, 50, 51, 52, 53, 54, 55, 56]),
-    };
-    expect(row).toEqual(rowData);
+    expect(row).toEqual(row1);
   });
 });
