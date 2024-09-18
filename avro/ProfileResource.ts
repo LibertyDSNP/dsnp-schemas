@@ -4,7 +4,7 @@ const ProfileResource: Schema = {
   namespace: "org.dsnp",
   name: "ProfileResource",
   type: "record",
-  doc: "A relationship to another DSNP user",
+  doc: "Profile-linked resource",
   fields: [
     {
       name: "type",
