@@ -31,54 +31,48 @@ export type UserDataDescriptor = {
 };
 
 export function descriptorForUserDataType(userDataType: UserDataType): UserDataDescriptor {
+  const base = {
+    systemName: userDataType,
+    encryptionAlgorithm: null,
+    compressionCodec: null,
+  };
+
   switch (userDataType) {
     case UserDataType.PublicFollows:
       return {
-        systemName: UserDataType.PublicFollows,
-        encryptionAlgorithm: null,
+        ...base,
         compressionCodec: UserDataCompressionCodecType.DEFLATE,
         avroSchema: GraphEdge,
       };
     case UserDataType.PrivateFollows:
       return {
-        systemName: UserDataType.PrivateFollows,
+        ...base,
         encryptionAlgorithm: UserDataEncryptionAlgorithmType.Curve25519XSalsa20Poly1305,
         compressionCodec: UserDataCompressionCodecType.DEFLATE,
         avroSchema: GraphEdge,
       };
     case UserDataType.PrivateConnections:
       return {
-        systemName: UserDataType.PrivateConnections,
+        ...base,
         encryptionAlgorithm: UserDataEncryptionAlgorithmType.Curve25519XSalsa20Poly1305,
         compressionCodec: UserDataCompressionCodecType.DEFLATE,
         avroSchema: GraphEdge,
       };
     case UserDataType.PrivateConnectionPRIds:
       return {
-        systemName: UserDataType.PrivateConnectionPRIds,
-        encryptionAlgorithm: null,
+        ...base,
         compressionCodec: UserDataCompressionCodecType.DEFLATE,
         avroSchema: PRId,
       };
     case UserDataType.KeyAgreementPublicKeys:
-      return {
-        systemName: UserDataType.KeyAgreementPublicKeys,
-        encryptionAlgorithm: null,
-        compressionCodec: null,
-        avroSchema: PublicKey,
-      };
     case UserDataType.AssertionMethodPublicKeys:
       return {
-        systemName: UserDataType.AssertionMethodPublicKeys,
-        encryptionAlgorithm: null,
-        compressionCodec: null,
+        ...base,
         avroSchema: PublicKey,
       };
     case UserDataType.ProfileResources:
       return {
-        systemName: UserDataType.ProfileResources,
-        encryptionAlgorithm: null,
-        compressionCodec: null,
+        ...base,
         avroSchema: ProfileResource,
       };
   }
