@@ -1,7 +1,7 @@
 /* eslint-disable jest/no-export */
 import fs from "fs";
 import { ParquetWriter } from "@dsnp/parquetjs";
-import { DSNPParquetSchema } from "../types/dsnp-parquet.js";
+import type { DSNPParquetSchema } from "../types/dsnp-parquet.js";
 import { fromDSNPSchema } from "../parquet.js";
 
 type RowGenerator = () => Record<string, unknown>;

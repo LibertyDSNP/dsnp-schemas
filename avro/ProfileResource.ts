@@ -1,6 +1,4 @@
-import { Schema } from "avsc";
-
-const ProfileResource: Schema = {
+const ProfileResource = {
   namespace: "org.dsnp",
   name: "ProfileResource",
   type: "record",

@@ -1,4 +1,4 @@
-import { DSNPParquetSchema } from "../types/dsnp-parquet.js";
+import type { DSNPParquetSchema } from "../types/dsnp-parquet.js";
 
 const dsnpContentAttributeSet: DSNPParquetSchema = [
   {

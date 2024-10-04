@@ -1,7 +1,3 @@
-// Last updated 2023-06-01
-
-import type { ParquetCompression } from "@dsnp/parquetjs/dist/lib/declare";
-
 export type DSNPParquetSchema = Array<ParquetColumn>;
 
 export type DSNPParquetType = ParquetBaseType | ParquetStringType | ParquetNumericType | ParquetTemporalType;
@@ -13,7 +9,8 @@ export interface ParquetColumn {
   bloom_filter: boolean;
 }
 
-type ColumnCompressionCodec = ParquetCompression;
+// Matches type ParquetCompression from "@dsnp/parquetjs/dist/lib/declare"
+type ColumnCompressionCodec = "UNCOMPRESSED" | "GZIP" | "SNAPPY" | "LZO" | "BROTLI" | "LZ4";
 
 type ParquetBaseType = "BOOLEAN" | "INT32" | "INT64" | "FLOAT" | "DOUBLE" | "BYTE_ARRAY" | "FIXED_LEN_BYTE_ARRAY";
 

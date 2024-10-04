@@ -24,20 +24,19 @@
   },
   "homepage": "https://github.com/LibertyDSNP/dsnp-schemas#readme",
   "dependencies": {
-    "avsc": "^5.7.7",
-    "json-stringify-pretty-compact": "^4.0.0",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.3.3"
   },
   "optionalDependencies": {
     "@dsnp/parquetjs": "^1.3.0"
   },
   "devDependencies": {
+    "ts-node": "^10.9.2",
+    "typescript": "^5.3.3",
     "@dsnp/parquetjs": "^1.3.5",
     "@dsnp/test-generators": "^0.1.0",
     "@types/jest": "^29.5.11",
     "@typescript-eslint/eslint-plugin": "^6.17.0",
     "@typescript-eslint/parser": "^6.17.0",
+    "avsc": "^5.7.7",
     "eslint": "^8.56.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.29.1",

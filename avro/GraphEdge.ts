@@ -1,6 +1,4 @@
-import { Schema } from "avsc";
-
-const GraphEdge: Schema = {
+const GraphEdge = {
   namespace: "org.dsnp",
   name: "GraphEdge",
   type: "record",

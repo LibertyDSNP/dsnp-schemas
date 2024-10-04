@@ -3,8 +3,6 @@ import PRId from "./avro/PRId.js";
 import PublicKey from "./avro/PublicKey.js";
 import ProfileResource from "./avro/ProfileResource.js";
 
-import { Schema } from "avsc";
-
 export enum UserDataType {
   PublicFollows = "publicFollows",
   PrivateFollows = "privateFollows",
@@ -27,7 +25,7 @@ export type UserDataDescriptor = {
   systemName: UserDataType;
   encryptionAlgorithm: null | UserDataEncryptionAlgorithmType;
   compressionCodec: null | UserDataCompressionCodecType;
-  avroSchema: Schema;
+  avroSchema: object;
 };
 
 export function descriptorForUserDataType(userDataType: UserDataType): UserDataDescriptor {

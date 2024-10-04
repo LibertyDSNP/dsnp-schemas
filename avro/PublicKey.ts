@@ -1,6 +1,4 @@
-import { Schema } from "avsc";
-
-const PublicKey: Schema = {
+const PublicKey = {
   type: "record",
   name: "PublicKey",
   namespace: "org.dsnp",

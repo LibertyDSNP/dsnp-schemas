@@ -1,7 +1,7 @@
 import { ParquetSchema } from "@dsnp/parquetjs";
 import type { ParquetType, FieldDefinition, SchemaDefinition, WriterOptions } from "@dsnp/parquetjs/dist/lib/declare";
 import type { createSBBFParams } from "@dsnp/parquetjs/dist/lib/bloomFilterIO/bloomFilterWriter";
-import { DSNPParquetSchema, DSNPParquetType, ParquetColumn } from "./types/dsnp-parquet.js";
+import type { DSNPParquetSchema, DSNPParquetType, ParquetColumn } from "./types/dsnp-parquet.js";
 
 /**
  * All supported types from Parquetjs

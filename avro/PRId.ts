@@ -1,6 +1,4 @@
-import { Schema } from "avsc";
-
-const PRId: Schema = {
+const PRId = {
   namespace: "org.dsnp",
   name: "PRId",
   type: "fixed",
