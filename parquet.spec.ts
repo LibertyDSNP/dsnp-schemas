@@ -1,5 +1,5 @@
 import fs from "fs";
-import { ParquetWriter, ParquetReader } from "@dsnp/parquetjs";
+import { ParquetWriter, ParquetReader, ParquetSchema } from "@dsnp/parquetjs";
 import { fromDSNPSchema } from "./parquet.js";
 import { AnnouncementType, descriptorForAnnouncementType } from "./index.js";
 
@@ -20,7 +20,7 @@ describe("DSNP Schema Conversion Test File", () => {
   let reader: ParquetReader;
 
   beforeAll(async () => {
-    const writer = await ParquetWriter.openFile(parquetSchema, path, writerOptions);
+    const writer = await ParquetWriter.openFile(new ParquetSchema(parquetSchema), path, writerOptions);
     writer.appendRow(row1);
     await writer.close();
 
@@ -33,7 +33,7 @@ describe("DSNP Schema Conversion Test File", () => {
   });
 
   it("schema is generated correctly", () => {
-    expect(parquetSchema).toMatchSnapshot();
+    expect(new ParquetSchema(parquetSchema)).toMatchSnapshot();
   });
 
   it("schema is encoded correctly", () => {

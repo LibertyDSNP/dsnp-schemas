@@ -72,6 +72,7 @@ ParquetSchema {
       "compression": "GZIP",
       "dLevelMax": 0,
       "encoding": "PLAIN",
+      "logicalType": undefined,
       "name": "announcementType",
       "originalType": "INT_32",
       "path": [
@@ -89,6 +90,7 @@ ParquetSchema {
       "compression": "GZIP",
       "dLevelMax": 0,
       "encoding": "PLAIN",
+      "logicalType": undefined,
       "name": "contentHash",
       "originalType": "UTF8",
       "path": [
@@ -106,6 +108,7 @@ ParquetSchema {
       "compression": "GZIP",
       "dLevelMax": 0,
       "encoding": "PLAIN",
+      "logicalType": undefined,
       "name": "fromId",
       "originalType": "UINT_64",
       "path": [
@@ -123,6 +126,7 @@ ParquetSchema {
       "compression": "GZIP",
       "dLevelMax": 0,
       "encoding": "PLAIN",
+      "logicalType": undefined,
       "name": "url",
       "originalType": "UTF8",
       "path": [
@@ -142,6 +146,7 @@ ParquetSchema {
       "compression": "GZIP",
       "dLevelMax": 0,
       "encoding": "PLAIN",
+      "logicalType": undefined,
       "name": "announcementType",
       "originalType": "INT_32",
       "path": [
@@ -159,6 +164,7 @@ ParquetSchema {
       "compression": "GZIP",
       "dLevelMax": 0,
       "encoding": "PLAIN",
+      "logicalType": undefined,
       "name": "contentHash",
       "originalType": "UTF8",
       "path": [
@@ -176,6 +182,7 @@ ParquetSchema {
       "compression": "GZIP",
       "dLevelMax": 0,
       "encoding": "PLAIN",
+      "logicalType": undefined,
       "name": "fromId",
       "originalType": "UINT_64",
       "path": [
@@ -193,6 +200,7 @@ ParquetSchema {
       "compression": "GZIP",
       "dLevelMax": 0,
       "encoding": "PLAIN",
+      "logicalType": undefined,
       "name": "url",
       "originalType": "UTF8",
       "path": [

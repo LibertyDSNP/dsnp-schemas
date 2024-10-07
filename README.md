@@ -50,12 +50,12 @@ npm install @dsnp/parquetjs
 ```
 
 ```typescript
-import { AnnouncementType } from "@dsnp/schemas"; 
+import { AnnouncementType } from "@dsnp/schemas";
 import { parquet } from "@dsnp/schemas";
-import { ParquetWriter } from "@dsnp/parquetjs";
+import { ParquetWriter, ParquetSchema } from "@dsnp/parquetjs";
 
 const [parquetSchema, writerOptions] = parquet.fromDSNPSchema(descriptorForAnnouncementType(AnnouncementType.Broadcast).parquetSchema);
-const writer = await ParquetWriter.openFile(parquetSchema, "./file.parquet", writerOptions);
+const writer = await ParquetWriter.openFile(new ParquetSchema(parquetSchema), "./file.parquet", writerOptions);
 writer.appendRow({
   announcementType: AnnouncementType.Broadcast,
   contentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
