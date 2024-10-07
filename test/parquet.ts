@@ -1,7 +1,7 @@
 /* eslint-disable jest/no-export */
 import fs from "fs";
-import { ParquetWriter } from "@dsnp/parquetjs";
-import { DSNPParquetSchema } from "../types/dsnp-parquet.js";
+import { ParquetWriter, ParquetSchema } from "@dsnp/parquetjs";
+import type { DSNPParquetSchema } from "../types/dsnp-parquet.js";
 import { fromDSNPSchema } from "../parquet.js";
 
 type RowGenerator = () => Record<string, unknown>;
@@ -11,7 +11,7 @@ export const testParquetSchema = async (model: DSNPParquetSchema) => {
     expect(async () => {
       const [schema, options] = fromDSNPSchema(model);
       await ParquetWriter.openStream(
-        schema,
+        new ParquetSchema(schema),
         {
           write: jest.fn(),
           end: jest.fn(),
@@ -43,7 +43,7 @@ const generateParquetTestFileSize = async (
 ): Promise<number> => {
   const [schema, options] = fromDSNPSchema(rawSchema);
   const path = `./test-${name}-size.parquet`;
-  const writer = await ParquetWriter.openFile(schema, path, options);
+  const writer = await ParquetWriter.openFile(new ParquetSchema(schema), path, options);
 
   for (let i = 0; i < count; i++) {
     await writer.appendRow(rowGenerator());

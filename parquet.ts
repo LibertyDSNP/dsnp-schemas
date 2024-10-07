@@ -1,7 +1,6 @@
-import { ParquetSchema } from "@dsnp/parquetjs";
-import type { ParquetType, FieldDefinition, SchemaDefinition, WriterOptions } from "@dsnp/parquetjs/dist/lib/declare";
+import type { ParquetType, FieldDefinition, SchemaDefinition, WriterOptions } from "@dsnp/parquetjs";
 import type { createSBBFParams } from "@dsnp/parquetjs/dist/lib/bloomFilterIO/bloomFilterWriter";
-import { DSNPParquetSchema, DSNPParquetType, ParquetColumn } from "./types/dsnp-parquet.js";
+import type { DSNPParquetSchema, DSNPParquetType, ParquetColumn } from "./types/dsnp-parquet.js";
 
 /**
  * All supported types from Parquetjs
@@ -104,14 +103,14 @@ const toSchema = (dsnpSchema: DSNPParquetSchema): SchemaDefinition => {
  * Create a new schema from a DSNP Parquet Schema (dsnp.org)
  * Also provides the Writer Options as DSNP Schemas support bloom filter selection.
  */
-export const fromDSNPSchema = (dsnpSchema: DSNPParquetSchema): [ParquetSchema, WriterOptions] => {
+export const fromDSNPSchema = (dsnpSchema: DSNPParquetSchema): [SchemaDefinition, WriterOptions] => {
   const schema: SchemaDefinition = toSchema(dsnpSchema);
   const bloomFilters = dsnpSchema.reduce<createSBBFParams[]>((acc, x) => {
     if (x.bloom_filter) acc.push({ column: x.name });
     return acc;
   }, []);
   return [
-    new ParquetSchema(schema),
+    schema,
     {
       bloomFilters,
     },

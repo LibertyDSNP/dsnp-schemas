@@ -7,7 +7,7 @@ import userAttributeSet from "./parquet/user-attribute-set.js";
 import dsnpContentAttributeSet from "./parquet/dsnp-content-attribute-set.js";
 import externalContentAttributeSet from "./parquet/external-content-attribute-set.js";
 
-import { DSNPParquetSchema } from "./types/dsnp-parquet.js";
+import type { DSNPParquetSchema } from "./types/dsnp-parquet.js";
 
 export enum AnnouncementType {
   Tombstone = 0,
