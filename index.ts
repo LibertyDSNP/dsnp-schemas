@@ -3,3 +3,5 @@ export { AnnouncementDescriptor, AnnouncementType, descriptorForAnnouncementType
 export { UserDataDescriptor, UserDataType, descriptorForUserDataType } from "./user-data.js";
 
 export * as parquet from "./parquet.js";
+
+export * from "./types/dsnp-parquet.js";
