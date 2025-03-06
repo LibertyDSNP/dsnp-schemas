@@ -21,7 +21,7 @@ describe("DSNP Schema Conversion Test File", () => {
 
   beforeAll(async () => {
     const writer = await ParquetWriter.openFile(new ParquetSchema(parquetSchema), path, writerOptions);
-    writer.appendRow(row1);
+    await writer.appendRow(row1);
     await writer.close();
 
     reader = await ParquetReader.openFile(path);

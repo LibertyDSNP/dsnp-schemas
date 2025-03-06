@@ -56,7 +56,7 @@ import { ParquetWriter, ParquetSchema } from "@dsnp/parquetjs";
 
 const [parquetSchema, writerOptions] = parquet.fromDSNPSchema(descriptorForAnnouncementType(AnnouncementType.Broadcast).parquetSchema);
 const writer = await ParquetWriter.openFile(new ParquetSchema(parquetSchema), "./file.parquet", writerOptions);
-writer.appendRow({
+await writer.appendRow({
   announcementType: AnnouncementType.Broadcast,
   contentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
   fromId: 78187493520,
