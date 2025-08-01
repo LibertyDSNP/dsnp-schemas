@@ -43,27 +43,49 @@ console.log(publicFollowsSchema);
 */
 ```
 
-### Write Parquet files
+## Parquet Schemas
 
-```sh
-npm install @dsnp/parquetjs
-```
+### DSNP Parquet Schema JSON Interface
+
+Parquet schemas supported by DSNP are a subset of the full Parquet specification, and are stored in a pared-down, DSNP-specific JSON format,
+represented by the following Javascript interface:
 
 ```typescript
-import { AnnouncementType } from "@dsnp/schemas";
-import { parquet } from "@dsnp/schemas";
+interface ParquetColumn {
+  name: string;
+  column_type: ParquetBaseType | ParquetStringType | ParquetNumericType | ParquetTemporalType;
+  compression:  "UNCOMPRESSED" | "GZIP" | "SNAPPY" | "LZO" | "BROTLI" | "LZ4";
+  bloom_filter: boolean;
+  optional?: boolean;
+}
+```
+
+This library provides utilities for converting the DSNP Parquet JSON into a [schema definition](https://github.com/LibertyDSNP/parquetjs?tab=readme-ov-file#json-schema) that can be used for writing with the [parquetjs](https://github.com/LibertyDSNP/parquetjs) library. 
+### Write Parquet files
+
+```typescript
+import { AnnouncementType, parquet } from "@dsnp/schemas";
 import { ParquetWriter, ParquetSchema } from "@dsnp/parquetjs";
 
-const [parquetSchema, writerOptions] = parquet.fromDSNPSchema(descriptorForAnnouncementType(AnnouncementType.Broadcast).parquetSchema);
-const writer = await ParquetWriter.openFile(new ParquetSchema(parquetSchema), "./file.parquet", writerOptions);
+const [parquetSchema, writerOptions] =
+  parquet.fromDSNPSchema(descriptorForAnnouncementType(AnnouncementType.Broadcast).parquetSchema);
+const writer = await ParquetWriter.openFile(
+  new ParquetSchema(parquetSchema),
+  "./file.parquet", writerOptions
+);
+
 await writer.appendRow({
   announcementType: AnnouncementType.Broadcast,
   contentHash: "bciqdnu347gcfmxzbkhgoubiobphm6readngitfywktdtbdocgogop2q",
   fromId: 78187493520,
   url: "https://spec.dsnp.org/DSNP/Types/Broadcast.html",
 });
+
 await writer.close();
 ```
+## Avro Schemas
+
+The full Avro binary specification is supported by DSNP, and is stored as raw JSON according to the [Avro specification](https://avro.apache.org/docs/1.11.1/specification/).
 
 ### Write Avro objects
 
