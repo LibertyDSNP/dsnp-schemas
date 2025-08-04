@@ -76,14 +76,21 @@ const convertColumnType = (columnType: DSNPParquetType): FieldDefinition["type"]
 };
 
 /**
- * Converts a field from a JSON Schema into a Parquet Field Definition
+ * Converts a field from a JSON Schema into a `@dsnp/parquetjs` Field Definition
  */
 const fromColumn = (column: ParquetColumn): FieldDefinition => {
-  return {
+  const { compression } = column;
+  const fieldDef: FieldDefinition = {
     type: convertColumnType(column.column_type),
-    compression: column.compression,
+    compression,
     statistics: false,
   };
+
+  if (column?.optional) {
+    fieldDef.optional = column.optional;
+  }
+
+  return fieldDef;
 };
 
 /**

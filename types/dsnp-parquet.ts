@@ -7,6 +7,7 @@ export interface ParquetColumn {
   column_type: DSNPParquetType;
   compression: ColumnCompressionCodec;
   bloom_filter: boolean;
+  optional?: boolean;
 }
 
 // Matches type ParquetCompression from "@dsnp/parquetjs/dist/lib/declare"
