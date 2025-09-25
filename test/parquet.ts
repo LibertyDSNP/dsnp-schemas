@@ -13,8 +13,8 @@ export const testParquetSchema = async (model: DSNPParquetSchema) => {
       await ParquetWriter.openStream(
         new ParquetSchema(schema),
         {
-          write: jest.fn(),
-          end: jest.fn(),
+          write: vi.fn(),
+          end: vi.fn(),
         },
         options,
       );

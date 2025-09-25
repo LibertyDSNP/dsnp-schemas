@@ -1,6 +1,6 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
-exports[`DSNP Schema Conversion Test File schema is encoded correctly 1`] = `
+exports[`DSNP Schema Conversion Test File > schema is encoded correctly 1`] = `
 [
   {
     "converted_type": null,
@@ -65,7 +65,7 @@ exports[`DSNP Schema Conversion Test File schema is encoded correctly 1`] = `
 ]
 `;
 
-exports[`DSNP Schema Conversion Test File schema is generated correctly 1`] = `
+exports[`DSNP Schema Conversion Test File > schema is generated correctly 1`] = `
 ParquetSchema {
   "fieldList": [
     {
@@ -244,7 +244,7 @@ ParquetSchema {
 }
 `;
 
-exports[`Schema Conversion with optional fields schema is encoded correctly 1`] = `
+exports[`Schema Conversion with optional fields > schema is encoded correctly 1`] = `
 [
   {
     "converted_type": null,
@@ -309,7 +309,7 @@ exports[`Schema Conversion with optional fields schema is encoded correctly 1`] 
 ]
 `;
 
-exports[`Schema Conversion with optional fields schema is generated correctly 1`] = `
+exports[`Schema Conversion with optional fields > schema is generated correctly 1`] = `
 ParquetSchema {
   "fieldList": [
     {

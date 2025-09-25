@@ -1,6 +1,6 @@
 ---
     name: Bug Report
-    about: Report an issue found in the Frequency Schemas
+    about: Report an issue found in the package
     title: ""
     labels: ""
     assignees: ""
