@@ -9,10 +9,6 @@ const path = require("path");
 // eslint-disable-next-line
 const rootPackage = require("../package.json");
 
-// Remove test related work
-delete rootPackage["jest-junit"];
-delete rootPackage["jest"];
-
 // Don't keep scripts
 delete rootPackage["scripts"];
 

@@ -10,13 +10,11 @@
   "plugins": [
     "@typescript-eslint",
     "prettier",
-    "jest",
     "import"
   ],
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "eslint:recommended",
-    "plugin:jest/recommended",
     "prettier"
   ],
   "rules": {

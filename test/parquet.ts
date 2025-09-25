@@ -1,4 +1,4 @@
-/* eslint-disable jest/no-export */
+import { vi } from "vitest";
 import fs from "fs";
 import { ParquetWriter, ParquetSchema } from "@dsnp/parquetjs";
 import type { DSNPParquetSchema } from "../types/dsnp-parquet.js";
