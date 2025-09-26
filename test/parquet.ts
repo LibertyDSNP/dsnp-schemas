@@ -1,4 +1,4 @@
-/* eslint-disable jest/no-export */
+import { vi } from "vitest";
 import fs from "fs";
 import { ParquetWriter, ParquetSchema } from "@dsnp/parquetjs";
 import type { DSNPParquetSchema } from "../types/dsnp-parquet.js";
@@ -13,8 +13,8 @@ export const testParquetSchema = async (model: DSNPParquetSchema) => {
       await ParquetWriter.openStream(
         new ParquetSchema(schema),
         {
-          write: jest.fn(),
-          end: jest.fn(),
+          write: vi.fn(),
+          end: vi.fn(),
         },
         options,
       );

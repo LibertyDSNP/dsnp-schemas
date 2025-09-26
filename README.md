@@ -60,7 +60,8 @@ interface ParquetColumn {
 }
 ```
 
-This library provides utilities for converting the DSNP Parquet JSON into a [schema definition](https://github.com/LibertyDSNP/parquetjs?tab=readme-ov-file#json-schema) that can be used for writing with the [parquetjs](https://github.com/LibertyDSNP/parquetjs) library. 
+This library provides utilities for converting the DSNP Parquet JSON into a [schema definition](https://github.com/LibertyDSNP/parquetjs?tab=readme-ov-file#json-schema) that can be used for writing with the [parquetjs](https://github.com/LibertyDSNP/parquetjs) library.
+
 ### Write Parquet files
 
 ```typescript
