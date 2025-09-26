@@ -27,7 +27,7 @@
     "@dsnp/test-generators": "0.1.0",
     "@typescript-eslint/eslint-plugin": "8.44.1",
     "@typescript-eslint/parser": "8.44.1",
-    "@vitest/eslint-plugin": "1.3.12",
+    "@vitest/eslint-plugin": "1.3.13",
     "avsc": "5.7.9",
     "eslint": "9.36.0",
     "eslint-config-prettier": "10.1.8",
